@@ -31,22 +31,23 @@ This project implements secure user authentication, JWT access/refresh tokens, R
 ```bash
 git clone https://github.com/your-username/auth-roles-microservice.git
 cd auth-roles-microservice
-
+```
 
 ### 2. Install Dependencies
-
+```bash
 - npm install
+```
 
 ### 3. Setup PostgreSQL
-
+```bash
 -Make sure PostgreSQL is installed and running.
  Create a database (example: auth_db):
 
 - CREATE DATABASE auth_db;
-
+```
 
 ### 4. Configure Environment Variables
-
+```bash
 Create a .env file in the project root:
 
 PORT=5000
@@ -67,22 +68,24 @@ JWT_REFRESH_EXPIRES=7d
 # Redis
 REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
-
+```
 
 ### 5. Run Database Migrations
-
+```bash
 - npx sequelize-cli db:migrate
-
+```
 ### 6. Start Redis
 
+```bash
 - redis-server
 
 Or run via Docker
 
 - docker run --name redis -p 6379:6379 -d redis
-
+```
 ### 7. Start the Server
-
+```bash
 - npm run dev
 
 ## Server will start on http://localhost:5000
+```
