@@ -125,7 +125,7 @@ exports.refreshAccessToken = async (req, res) => {
         const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
 
         // Check if refresh token still exists in Redis
-        const storedToken = await redisClient.get(`refreshToken:${decoded.id}`);
+        const storedToken = await redisClient.get(`${decoded.id}`);
         if (!storedToken || storedToken !== refreshToken) {
             return res.status(403).json({ success: false, message: 'Invalid or expired refresh token.' });
         }

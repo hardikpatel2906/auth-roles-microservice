@@ -77,7 +77,7 @@ REDIS_PORT=6379
 ### 6. Start Redis
 
 ```bash
-- redis-server
+- redis-server or redis-cli
 
 Or run via Docker
 
