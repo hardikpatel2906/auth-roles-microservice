@@ -1,8 +1,29 @@
 import js from "@eslint/js";
 import globals from "globals";
-import { defineConfig } from "eslint/config";
 
-export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
-  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
-]);
+export default [
+  js.configs.recommended,
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node,    // ✅ fixes process, __dirname, __filename
+      }
+    },
+    rules: {
+      "no-unused-vars": ["warn", {
+        "argsIgnorePattern": "^_"
+      }],   // ✅ warn instead of error
+      "no-console": "off",        // ✅ allow console.log in Node apps
+    }
+  },
+  {
+    // ignore test/migration files
+    ignores: [
+      "testRedis.js",
+      "migrations/**"
+    ]
+  }
+];

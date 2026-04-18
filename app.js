@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const { User } = require('./models');
+// const { User } = require('./models');
 const authRoutes = require('./routes/authRoutes');
 const tokenRoutes = require('./routes/tokenRoutes');
 const protectedRoutes = require('./routes/protectedRoutes');

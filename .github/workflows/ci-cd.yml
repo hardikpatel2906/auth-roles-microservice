@@ -30,8 +30,7 @@ jobs:
         run: npm ci
 
       - name: Run ESLint
-        run: npx eslint . --format=json
-
+        run: npx eslint .
   # ── Job 2: Build & Push Docker Image ────────
   build:
     name: Build & Push Image
