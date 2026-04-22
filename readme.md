@@ -22,7 +22,8 @@ This project implements secure user authentication, JWT access/refresh tokens, R
 - **Redis** → Session/refresh token management
 - **JWT** → Authentication tokens
 - **bcrypt** → Password hashing
-
+- **Docker** → Containerization
+- **GitHub Actions** → Continuous Integration
 ---
 
 ## 📦 Installation & Setup
